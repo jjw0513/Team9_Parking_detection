@@ -1,0 +1,5 @@
+names:
+  0: Car
+  1: Empty
+nc: 2
+test: ./test2/images/
