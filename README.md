@@ -189,7 +189,7 @@ Example) A parking space remained marked as occupied even when the car had left 
 2) Reference Code for Implementation
 - On Ultralytics)
 
-    https://docs.ultralytics.com/guides/parking-management/
+    https://docs.ultralytics.com/
 
 - On Git-Hub) For Coordinate Selection and Applying Coordinate Information
 
