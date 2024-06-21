@@ -2,21 +2,9 @@ import cv2
 from ultralytics import YOLO
 import yaml
 import os
-
-# 설정 파일 작성
-# data = {
-#     "test": './school_test/images/',
-#     "names": {0: 'Car', 1: 'Empty'},
-#     "nc": 2
-# }
-
-# with open('./custom.yaml', 'w') as f:
-#     yaml.dump(data, f)
-#
-# # 설정 파일 확인
-# with open('./custom.yaml', 'r') as f:
-#     lines = yaml.safe_load(f)
-#     print(lines)
+'''
+비디오 load 및 write 동작을 확인하기 위한 파일
+'''
 
 # 학습된 모델 불러오기
 model = YOLO('./runs/detect/train3/weights/best.pt')

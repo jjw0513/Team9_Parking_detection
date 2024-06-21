@@ -1,19 +1,24 @@
 # #from ultralytics import solutions
 import parking_management
-parking_selection = parking_management.ParkingPtsSelection()
-parking_management_obj = parking_management.ParkingManagement(model_path="/final_w.pt")
 import cv2
 from ultralytics import solutions
+
+#(application)주차 공간의 경계 좌표를 지정해주기 위한 thinker GUI 불러오기
+parking_selection = parking_management.ParkingPtsSelection()
+
+#학습된 YOLO 가중치 정보를 불러와 객체를 탐지하도록 Load
+parking_management_obj = parking_management.ParkingManagement(model_path="/final_w.pt")
+
 
 # Path to json file, that created with above point selection app
 polygon_json_path = "label_json/bounding_boxes.json"
 
 # Video capture
-cap = cv2.VideoCapture("./datasets/school_video/0605_school.mp4")   #비디오 일치시키기
+cap = cv2.VideoCapture("./datasets/school_video/0605_school.mp4")   #탐지 대상 비디오 불러오기
 assert cap.isOpened(), "Error reading video file"
 w, h, fps = (int(cap.get(x)) for x in (cv2.CAP_PROP_FRAME_WIDTH, cv2.CAP_PROP_FRAME_HEIGHT, cv2.CAP_PROP_FPS))
 
-# Video writer
+# Video writer 최종 탐지 결과를 비디오로 저장
 video_writer = cv2.VideoWriter("parking management_park.avi", cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h))
 
 # Initialize parking management object
