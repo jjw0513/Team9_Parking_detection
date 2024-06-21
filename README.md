@@ -1,4 +1,4 @@
-# Team9's Project : Parking Space Detection System🚗 #
+# The project of Team9 : Parking Space Detection System🚗 #
 ## This git repository is for the Term Project final report for the "Embedded Systems and IoT Applications" course. ##
 
 ## Presentation Materials ##
