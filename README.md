@@ -32,8 +32,9 @@ https://drive.google.com/file/d/1KNxn3nk9PoJdqOD3CRaO3LsSjmez3-lN/view?usp=shari
 2. Project Diagram
 3. Prepare Data
 4. Key Code Explanation
-5. Trial and Error
-6. References
+5. Project Installation and Usage Guide
+6. Trial and Error
+7. References
 
 ## Project Summary ##
 💡 Project Motivation : 
@@ -151,6 +152,64 @@ Let's explain the key code of the project
     It updates the occupancy status based on whether there is a vehicle within the boundary of each parking space. Finally, it displays the status of the parking spaces on the image.
 
     **display_frames method**: Displays the current occupancy information on the screen.
+
+
+## Project Installation and Usage Guide
+To use the project directly, follow these steps:
+
+#### 1. Install libraries using requirements.txt
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 2. Download the datasets directory
+
+Download the directory attached at the top.
+
+If there is a parking lot you want to detect, you can also add a photo and label information of that 
+space.
+
+Also, If you want to detect objects other than cars and parking spaces, modify the .yaml file.
+
+
+#### 3. Perform training
+
+Set the ratio of train and validation manually or use the datasets directory as it is.
+```bash    
+python yolo_train.py
+```
+If you want to check the training performance, you can create a Weights & Biases (wandb) account to view the graphs.
+
+    
+#### 4. Save the trained weights (final_w.pt)
+
+
+#### 5. Conduct testing
+Load the previously saved weight information.
+```bash
+python yolo_test.py
+```
+
+#### 6. Generate the coordinate information of the parking lot (as a .json file)
+Prepare the video you want to detect and a frame from the video.
+```bash
+python parking_app.py
+```
+
+If you want to set coordinates on a parking lot photo, use the following object.
+```bash
+parking_selection = parking_management.ParkingPtsSelection()
+```
+
+#### 7. Apply the application to the target video.
+Load the previously saved weight information.
+
+If parking lot coordinates have been pre-specified, you can encode the video as follows after commenting out the coordinates.
+
+```bash
+#parking_selection = parking_management.ParkingPtsSelection()
+```
 
 
 ## Trial and Error
