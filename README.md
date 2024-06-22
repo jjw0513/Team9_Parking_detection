@@ -155,6 +155,10 @@ Let's explain the key code of the project
 
 
 ## Project Installation and Usage Guide
+### Execution environment)
+The project has been implemented in PyCharm. To run it, please prepare **PyCharm** or **VSCode** editor with an **Anaconda3 virtual environment.**
+
+
 To use the project directly, follow these steps:
 
 #### 1. Install libraries using requirements.txt
