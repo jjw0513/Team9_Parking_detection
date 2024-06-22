@@ -9,7 +9,7 @@ data = {
     #"train" : './train/images/',
     #    "val" : './valid/images/',
     #    "test" : './test/images/',
-        "test" : './test2/images/',
+        "test" : './test/images/',
         "names" : {0 : 'Car', 1 : 'Empty'},
     "nc" : 2
 }
@@ -27,7 +27,7 @@ with open('./custom.yaml', 'r') as f :
 model = YOLO('final_w.pt')
 
 # 테스트 데이터에 대해 예측 수행
-results = model.predict(source='./datasets/test2/images',save=True, epochs=10)  # 테스트 이미지 경로 지정
+results = model.predict(source='./datasets/test/images',save=True, epochs=10)  # 테스트 이미지 경로 지정
 plots = results[0].plot()
 cv2.imshow("plot", plots)
 cv2.waitKey(0)

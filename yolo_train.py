@@ -7,10 +7,10 @@ from sklearn.model_selection import train_test_split
 print("CUDA available: ", torch.cuda.is_available())
 
 # 데이터 경로 설정
-train_images_path = 'datasets/train2/images/'
-train_labels_path = 'datasets/train2/labels/'
-valid_images_path = 'datasets/valid2/images/'
-valid_labels_path = 'datasets/valid2/labels/'
+train_images_path = 'datasets/train/images/'
+train_labels_path = 'datasets/train/labels/'
+valid_images_path = 'datasets/valid/images/'
+valid_labels_path = 'datasets/valid/labels/'
 
 
 # 유효성 검사 데이터를 저장할 디렉토리 생성
@@ -48,8 +48,8 @@ for lbl_file in valid_labels:
 
 
 data = {
-    "train" : './train2/images/',
-        "val" : './valid2/images/',
+    "train" : './train/images/',
+        "val" : './valid/images/',
         "test" : '/test/images/',
         "names" : {0 : 'Car', 1 : 'Empty'},
     "nc" : 2

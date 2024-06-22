@@ -2,4 +2,6 @@ names:
   0: Car
   1: Empty
 nc: 2
-test: ./test2/images/
+train: ./train/images/
+val: ./val/images/
+test: ./test/images/
